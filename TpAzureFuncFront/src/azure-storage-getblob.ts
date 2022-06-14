@@ -1,0 +1,59 @@
+// ./src/azure-storage-blob.ts
+
+// <snippet_package>
+// THIS IS SAMPLE CODE ONLY - NOT MEANT FOR PRODUCTION USE
+import { BlobServiceClient, ContainerClient } from '@azure/storage-blob';
+
+/*const containerName = process.env.REACT_APP_STORAGECONTAINERNAME;
+const sasToken = process.env.REACT_APP_STORAGESASTOKEN;
+const storageAccountName = process.env.REACT_APP_STORAGERESOURCENAME;
+*/
+var containerName = 'hdtpcontainer';
+var sasToken = 'se=2023-12-31T12%3A00Z&sp=rwdlac&spr=https&sv=2021-06-08&ss=b&srt=osc&sig=Rn%2BT4SM31I6tpUauJQfsWCliUwjjAaVbJ6Zq%2BFOo0uo%3D';
+var storageAccountName = 'comptestockagemoustapha';
+
+// </snippet_package>
+
+// <snippet_isStorageConfigured>
+// Feature flag - disable storage feature to app if not configured
+export const isStorageConfigured = () => {
+    return (!storageAccountName || !sasToken) ? false : true;
+}
+// </snippet_isStorageConfigured>
+
+// <snippet_getBlobsInContainer>
+// return list of blobs in container to display
+const getBlobsInContainer = async (containerClient: ContainerClient) => {
+    const returnedBlobUrls: string[] = [];
+
+    // get list of blobs in container
+    // eslint-disable-next-line
+    for await (const blob of containerClient.listBlobsFlat()) {
+        // if image is public, just construct URL
+        returnedBlobUrls.push(
+            `https://${storageAccountName}.blob.core.windows.net/${containerName}/${blob.name}`
+        );
+    }
+
+    return returnedBlobUrls;
+}
+
+const getBlobs = async (file: File | null): Promise<string[]> => {
+    //if (!file) return [];
+
+    // get BlobService = notice `?` is pulled out of sasToken - if created in Azure portal
+    const blobService = new BlobServiceClient(
+        `https://${storageAccountName}.blob.core.windows.net/?${sasToken}`
+    );
+
+    // get Container - full public read access
+    const containerClient: ContainerClient = blobService.getContainerClient(containerName);
+    
+
+    // get list of blobs in container
+    return getBlobsInContainer(containerClient);
+};
+// </snippet_uploadFileToBlob>
+
+export default getBlobs;
+

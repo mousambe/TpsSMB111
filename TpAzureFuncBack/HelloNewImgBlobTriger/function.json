@@ -1,0 +1,29 @@
+{
+
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myblobTrigger",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "tpcontainer/{name}",
+      "connection": "comptestockagemoustapha_STORAGE"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "inputImg",
+      "path": "tpcontainer/{name}",
+      "connection": "comptestockagemoustapha_STORAGE",
+      "dataType": "binary"
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "outputImg",
+      "path": "hdtpcontainer/hd{name}",
+      "connection": "comptestockagemoustapha_STORAGE",
+      "dataType": "binary"
+    }
+  ]
+}

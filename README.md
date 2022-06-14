@@ -19,6 +19,5 @@ Pour les tests merci d'utiliser ces [images](https://github.com/mousambe/TpsSMB1
 N'ayant pas pu utiliser la biding SignalR, j'ai mis un timer sur l'application front avant qu'elle n'aille chercher l'image dans container des images traitées.
 De ce fait faut patienter une minutes avant de voir l'image traitée. Si au bout d'une minute vous ne la voyez pas merci de reactuliser et d'upload une autre image puis patienter.
 
-J'ai aussi joint le [script de creation des ressources pour le  Tp1 sur Iaas](https://github.com/mousambe/TpsSMB111/blob/master/TP1_ProjetIAAS.sh)
 
 **Merci de votre comprehensio**

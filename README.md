@@ -20,4 +20,4 @@ N'ayant pas pu utiliser la biding SignalR, j'ai mis un timer sur l'application f
 De ce fait faut patienter une minutes avant de voir l'image traitée. Si au bout d'une minute vous ne la voyez pas merci de reactuliser et d'upload une autre image puis patienter.
 
 
-**Merci de votre comprehensio**
+**Merci de votre comprehension**

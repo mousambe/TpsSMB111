@@ -6,7 +6,7 @@ N'ayant pas pu réaliser le Tp avec Cyclegan, j'ai utilisé la bibliotheque [ddd
 
 J'ai utilisé un deuxieme blob à la place de la base de donnée CosmosDb pour stocker des image traitées.
 
-le script de création des ressources du Tp est [TP2_ProjetAzureFunction.sh](https://github.com/mousambe/TpsSMB111/blob/master/TP2_ProjetAzureFunction.sh)
+le script de création des ressources du Tp est [TP_ProjetAzureFunction.sh](https://github.com/mousambe/TpsSMB111/blob/master/TP_ProjetAzureFunction.sh)
 
 le code de la partie frontend est [TpAzureFuncFront](https://github.com/mousambe/TpsSMB111/tree/master/TpAzureFuncFront)
 
